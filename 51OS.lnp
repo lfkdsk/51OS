@@ -1,0 +1,5 @@
+"STARTUP.obj",
+"main.obj",
+"task_switch.obj",
+"OS_task.obj" 
+TO "51OS" 

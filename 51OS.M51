@@ -1,0 +1,380 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/26/2015  01:45:18  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, main.obj, task_switch.obj, OS_task.obj TO 51OS
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  main.obj (MAIN)
+  task_switch.obj (TASK_SWITCH)
+  OS_task.obj (OS_TASK)
+
+
+LINK MAP OF MODULE:  51OS (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?TASK_SWITCH
+            DATA    000AH     0001H     UNIT         ?DT?OS_TASK
+            DATA    000BH     0001H     UNIT         _DATA_GROUP_
+            IDATA   000CH     006EH     UNIT         ?ID?OS_TASK
+            IDATA   007AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0047H     UNIT         ?PR?TASK_SWITCH?TASK_SWITCH
+            CODE    0847H     003DH     UNIT         ?PR?MAIN?MAIN
+            CODE    0884H     002FH     UNIT         ?PR?_TASK_LOAD?OS_TASK
+            CODE    08B3H     0011H     UNIT         ?PR?DEL10MS?MAIN
+            CODE    08C4H     000FH     UNIT         ?PR?_OS_START?OS_TASK
+            CODE    08D3H     000EH     UNIT         ?PR?TASK_1?MAIN
+            CODE    08E1H     000EH     UNIT         ?PR?TASK_2?MAIN
+            CODE    08EFH     000EH     UNIT         ?PR?TASK_3?MAIN
+            CODE    08FDH     000EH     UNIT         ?PR?TASK_4?MAIN
+            CODE    090BH     000EH     UNIT         ?PR?TASK_5?MAIN
+            CODE    0919H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   51OS (?C_STARTUP)
+
+
+SEGMENT                               DATA_GROUP 
+  +--> CALLED SEGMENT               START    LENGTH
+---------------------------------------------------
+?C_C51STARTUP                       -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                       -----    -----
+  +--> ?PR?TASK_1?MAIN
+  +--> ?PR?_TASK_LOAD?OS_TASK
+  +--> ?PR?TASK_2?MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/26/2015  01:45:18  PAGE 2
+
+
+  +--> ?PR?TASK_3?MAIN
+  +--> ?PR?TASK_4?MAIN
+  +--> ?PR?_OS_START?OS_TASK
+
+?PR?TASK_1?MAIN                     -----    -----
+  +--> ?PR?DEL10MS?MAIN
+  +--> ?PR?TASK_SWITCH?TASK_SWITCH
+
+?PR?TASK_SWITCH?TASK_SWITCH         000BH    0001H
+
+?PR?TASK_2?MAIN                     -----    -----
+  +--> ?PR?DEL10MS?MAIN
+  +--> ?PR?TASK_SWITCH?TASK_SWITCH
+
+?PR?TASK_3?MAIN                     -----    -----
+  +--> ?PR?DEL10MS?MAIN
+  +--> ?PR?TASK_SWITCH?TASK_SWITCH
+
+?PR?TASK_4?MAIN                     -----    -----
+  +--> ?PR?DEL10MS?MAIN
+  +--> ?PR?TASK_SWITCH?TASK_SWITCH
+
+
+
+UNRESOLVED EXTERNAL SYMBOLS:
+   OS_PCB
+
+
+
+SYMBOL TABLE OF MODULE:  51OS (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0919H         SEGMENT       ?C_C51STARTUP
+  I:007AH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:091CH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0919H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/26/2015  01:45:18  PAGE 3
+
+
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0919H         LINE#         133
+  C:091BH         LINE#         134
+  C:091CH         LINE#         135
+  C:091DH         LINE#         136
+  C:091FH         LINE#         185
+  C:0922H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0847H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:08D3H         PUBLIC        task_1
+  C:08E1H         PUBLIC        task_2
+  C:08EFH         PUBLIC        task_3
+  C:08FDH         PUBLIC        task_4
+  C:090BH         PUBLIC        task_5
+  D:00C8H         PUBLIC        T2CON
+  C:08B3H         PUBLIC        del10ms
+  D:00D0H         PUBLIC        PSW
+  B:0080H.0       PUBLIC        K1
+  -------         PROC          DEL10MS
+  -------         DO            
+  D:0005H         SYMBOL        a
+  D:0006H         SYMBOL        b
+  D:0007H         SYMBOL        c
+  -------         ENDDO         
+  C:08B3H         LINE#         7
+  C:08B3H         LINE#         8
+  C:08B3H         LINE#         10
+  C:08B5H         LINE#         11
+  C:08B7H         LINE#         12
+  C:08C3H         LINE#         13
+  -------         ENDPROC       DEL10MS
+  -------         PROC          TASK_1
+  C:08D3H         LINE#         14
+  C:08D3H         LINE#         15
+  C:08D3H         LINE#         16
+  C:08D3H         LINE#         17
+  C:08D3H         LINE#         18
+  C:08D6H         LINE#         19
+  C:08D9H         LINE#         20
+  C:08DCH         LINE#         21
+  C:08DCH         LINE#         22
+  C:08DFH         LINE#         23
+  C:08DFH         LINE#         24
+  -------         ENDPROC       TASK_1
+  -------         PROC          TASK_2
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/26/2015  01:45:18  PAGE 4
+
+
+  C:08E1H         LINE#         27
+  C:08E1H         LINE#         28
+  C:08E1H         LINE#         29
+  C:08E1H         LINE#         30
+  C:08E1H         LINE#         31
+  C:08E4H         LINE#         32
+  C:08E7H         LINE#         33
+  C:08EAH         LINE#         34
+  C:08EAH         LINE#         35
+  C:08EDH         LINE#         36
+  C:08EDH         LINE#         37
+  -------         ENDPROC       TASK_2
+  -------         PROC          TASK_3
+  C:08EFH         LINE#         40
+  C:08EFH         LINE#         41
+  C:08EFH         LINE#         43
+  C:08EFH         LINE#         44
+  C:08EFH         LINE#         45
+  C:08F2H         LINE#         46
+  C:08F5H         LINE#         47
+  C:08F8H         LINE#         48
+  C:08F8H         LINE#         49
+  C:08FBH         LINE#         50
+  C:08FBH         LINE#         51
+  -------         ENDPROC       TASK_3
+  -------         PROC          TASK_4
+  C:08FDH         LINE#         54
+  C:08FDH         LINE#         55
+  C:08FDH         LINE#         56
+  C:08FDH         LINE#         57
+  C:08FDH         LINE#         58
+  C:0900H         LINE#         59
+  C:0903H         LINE#         60
+  C:0906H         LINE#         61
+  C:0906H         LINE#         62
+  C:0909H         LINE#         63
+  C:0909H         LINE#         64
+  -------         ENDPROC       TASK_4
+  -------         PROC          TASK_5
+  C:090BH         LINE#         67
+  C:090BH         LINE#         68
+  C:090BH         LINE#         69
+  C:090BH         LINE#         70
+  C:090BH         LINE#         71
+  C:090EH         LINE#         72
+  C:0911H         LINE#         73
+  C:0914H         LINE#         74
+  C:0914H         LINE#         75
+  C:0917H         LINE#         76
+  C:0917H         LINE#         77
+  -------         ENDPROC       TASK_5
+  -------         PROC          MAIN
+  C:0847H         LINE#         79
+  C:0847H         LINE#         80
+  C:0847H         LINE#         82
+  C:0852H         LINE#         83
+  C:085DH         LINE#         84
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/26/2015  01:45:18  PAGE 5
+
+
+  C:0868H         LINE#         85
+  C:0873H         LINE#         86
+  C:087EH         LINE#         87
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        TASK_SWITCH
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:0081H         PUBLIC        SP
+  C:0800H         PUBLIC        task_switch
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          TASK_SWITCH
+  -------         DO            
+  D:0008H         SYMBOL        i
+  D:0007H         SYMBOL        j
+  D:000BH         SYMBOL        MAX
+  -------         ENDDO         
+  C:0800H         LINE#         8
+  C:0800H         LINE#         11
+  C:080AH         LINE#         12
+  C:080FH         LINE#         13
+  C:080FH         LINE#         14
+  C:0811H         LINE#         15
+  C:0829H         LINE#         16
+  C:0829H         LINE#         17
+  C:082BH         LINE#         18
+  C:082BH         LINE#         19
+  C:0839H         LINE#         20
+  C:083BH         LINE#         21
+  C:0846H         LINE#         22
+  -------         ENDPROC       TASK_SWITCH
+  -------         ENDMOD        TASK_SWITCH
+
+  -------         MODULE        OS_TASK
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:08C4H         PUBLIC        _OS_Start
+  D:00B8H         PUBLIC        IP
+  D:0081H         PUBLIC        SP
+  D:000AH         PUBLIC        OS_TASK_ID
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0884H         PUBLIC        _task_load
+  I:000CH         PUBLIC        OS_PBC
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  I:0016H         PUBLIC        OS_Stack
+  -------         PROC          _TASK_LOAD
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/26/2015  01:45:18  PAGE 6
+
+
+  D:0007H         SYMBOL        PRI
+  D:0004H         SYMBOL        FN
+  D:0003H         SYMBOL        T_ID
+  C:0884H         LINE#         17
+  C:0884H         LINE#         18
+  C:0884H         LINE#         19
+  C:088CH         LINE#         20
+  C:089CH         LINE#         21
+  C:08A8H         LINE#         22
+  C:08B2H         LINE#         23
+  -------         ENDPROC       _TASK_LOAD
+  -------         PROC          _OS_START
+  D:0006H         SYMBOL        T_ID
+  C:08C4H         LINE#         26
+  C:08C4H         LINE#         27
+  C:08C4H         LINE#         28
+  C:08C6H         LINE#         29
+  C:08D1H         LINE#         30
+  -------         ENDPROC       _OS_START
+  -------         ENDMOD        OS_TASK
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TASK_5?MAIN
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  OS_PCB
+    MODULE:  task_switch.obj (TASK_SWITCH)
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  task_switch.obj (TASK_SWITCH)
+    ADDRESS: 0806H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  task_switch.obj (TASK_SWITCH)
+    ADDRESS: 0817H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  task_switch.obj (TASK_SWITCH)
+    ADDRESS: 081DH
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  task_switch.obj (TASK_SWITCH)
+    ADDRESS: 0841H
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  OS_PCB
+    MODULE:  OS_task.obj (OS_TASK)
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  OS_task.obj (OS_TASK)
+    ADDRESS: 0888H
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/26/2015  01:45:18  PAGE 7
+
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  OS_task.obj (OS_TASK)
+    ADDRESS: 0898H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  OS_task.obj (OS_TASK)
+    ADDRESS: 08CCH
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0128H BYTE (14%) *
+******************************************************************************
+
+Program Size: data=123.0 xdata=0 code=296
+LINK/LOCATE RUN COMPLETE.  10 WARNING(S),  0 ERROR(S)

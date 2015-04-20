@@ -1,0 +1,58 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Áõ·áâý\Desktop\È¦È¦ÏµÍ³\51OS\51OS.uvproj
+Project File Date:  02/26/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(79): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(79): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TASK_5?MAIN
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  OS_PCB
+    MODULE:  task_switch.obj (TASK_SWITCH)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  task_switch.obj (TASK_SWITCH)
+    ADDRESS: 0806H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  task_switch.obj (TASK_SWITCH)
+    ADDRESS: 0817H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  task_switch.obj (TASK_SWITCH)
+    ADDRESS: 081DH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  task_switch.obj (TASK_SWITCH)
+    ADDRESS: 0841H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  OS_PCB
+    MODULE:  OS_task.obj (OS_TASK)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  OS_task.obj (OS_TASK)
+    ADDRESS: 0888H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  OS_task.obj (OS_TASK)
+    ADDRESS: 0898H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  OS_PCB
+    MODULE:  OS_task.obj (OS_TASK)
+    ADDRESS: 08CCH
+Program Size: data=123.0 xdata=0 code=296
+"51OS" - 0 Error(s), 10 Warning(s).
